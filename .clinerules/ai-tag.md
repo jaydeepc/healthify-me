@@ -1,0 +1,1 @@
+For every code that you add, I want you to add a # AI: Start and a # AI: End marker at the start of the code and the end of the code respectively. Make sure to adapt to the code so that the comments are proper to track all AI suggested code. Ensure you don't put in duplicate markers or incorrect markers. Take your time to understand the code and add these markers
