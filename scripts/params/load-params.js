@@ -5,7 +5,7 @@ import path from 'path';
 async function loadParams() {
     try {
         const paramsLoader = new ParamsLoader({
-            serviceName: '{{REPO_NAME}}'
+            serviceName: 'health-tracker'
         });
 
         const params = await paramsLoader.loadParams();

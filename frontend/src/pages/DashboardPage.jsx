@@ -25,7 +25,7 @@ function DashboardPage() {
                     {/* Header with Piramal Finance theme */}
                     <div className="text-center">
                         <h1 className="text-3xl font-extrabold text-gray-700 mb-2">
-                        {{APP_DISPLAY_NAME}}
+                        Health Tracker
                         </h1>
                     </div>
 

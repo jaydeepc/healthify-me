@@ -12,18 +12,18 @@ export default defineConfig({
         server.printUrls = () => {
           originalPrintUrls.call(server);
           console.log('\n\x1b[1m\x1b[32mApp started successfully!\x1b[0m')
-          console.log('\n\x1b[1m\x1b[33mCheckout it out on \x1b[4mhttps://dev-codeserver.piramalfinance.com{{APP_URL_PREFIX}}\x1b[0m\n')
+          console.log('\n\x1b[1m\x1b[33mCheckout it out on \x1b[4mhttps://dev-codeserver.piramalfinance.com/health-tracker\x1b[0m\n')
         }
       }
     }
   ],
-  base: '{{APP_URL_PREFIX}}',
+  base: '/health-tracker',
   server: {
     port: process.env.FRONTEND_PORT,
     host: true,
     strictPort: true,
     proxy: {
-      '{{APP_URL_PREFIX}}/api': {
+      '/health-tracker/api': {
         target: `http://localhost:${process.env.BACKEND_PORT}`,
         changeOrigin: true,
         configure: (proxy, options) => {

@@ -20,7 +20,7 @@ describe('App Component', () => {
   it('renders the login page by default', () => {
     render(<App />);
     expect(screen.getByRole('heading', { name: 'Login' })).toBeInTheDocument();
-    expect(screen.getByText('Enter your email id and password to access {{APP_DISPLAY_NAME}}')).toBeInTheDocument();
+    expect(screen.getByText('Enter your email id and password to access Health Tracker')).toBeInTheDocument();
   });
 
   it('renders the Piramal Finance logo', () => {
@@ -34,9 +34,9 @@ describe('App Component', () => {
     expect(screen.getByAltText('Welcome')).toBeInTheDocument();
   });
 
-  it('shows the {{APP_DISPLAY_NAME}} branding', () => {
+  it('shows the Health Tracker branding', () => {
     render(<App />);
-    expect(screen.getByText('{{APP_DISPLAY_NAME}}')).toBeInTheDocument();
+    expect(screen.getByText('Health Tracker')).toBeInTheDocument();
   });
 
   it('renders email and password input fields', () => {

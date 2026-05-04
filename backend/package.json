@@ -1,7 +1,7 @@
 {
-  "name": "{{REPO_NAME}}-backend",
+  "name": "health-tracker-backend",
   "version": "1.0.0",
-  "description": "Node.js backend for {{REPO_NAME}} application",
+  "description": "Node.js backend for health-tracker application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

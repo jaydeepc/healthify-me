@@ -8,7 +8,7 @@ const register = new client.Registry();
 
 // Add default labels to all metrics
 register.setDefaultLabels({
-  app_piramal_name: "{{REPO_NAME}}"
+  app_piramal_name: "health-tracker"
 });
 
 // Add default metrics (e.g., CPU, memory usage)

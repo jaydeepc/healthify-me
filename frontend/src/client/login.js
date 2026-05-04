@@ -20,7 +20,7 @@ export const loginWithSSO = async (email, password) => {
       userName: email,
       password: password,
       source: 'OPS_CENTRAL',
-      app_name: '{{REPO_NAME}}'
+      app_name: 'health-tracker'
     }, {
       headers: {
         'Content-Type': 'application/json',

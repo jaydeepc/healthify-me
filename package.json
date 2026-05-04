@@ -1,13 +1,13 @@
 {
-    "name": "{{REPO_NAME}}",
+    "name": "health-tracker",
     "version": "1.0.0",
-    "description": "{{REPO_NAME}} application",
+    "description": "health-tracker application",
     "license": "MIT",
     "type": "module",
     "scripts": {
         "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
         "install:ci": "npm run install:all",
-        "dev": "(lsof -ti:{{FRONTEND_PORT}} && kill -9 $(lsof -ti:{{FRONTEND_PORT}}) || true) && (lsof -ti:{{BACKEND_PORT}} && kill -9 $(lsof -ti:{{BACKEND_PORT}}) || true) && sh ./scripts/start.sh",
+        "dev": "(lsof -ti:16972 && kill -9 $(lsof -ti:16972) || true) && (lsof -ti:16973 && kill -9 $(lsof -ti:16973) || true) && sh ./scripts/start.sh",
         "start": "sh ./scripts/start.sh",
         "health:check": "curl -f http://localhost:8001/health && curl -f http://localhost:8002/api/health",
         "build:frontend": "cd frontend && npm run build",

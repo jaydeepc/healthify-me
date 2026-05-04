@@ -22,8 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // API Routes
-app.use('{{APP_URL_PREFIX}}/api', routes);
-app.use('{{APP_URL_PREFIX}}/api/actuator', prometheusRoutes);
+app.use('/health-tracker/api', routes);
+app.use('/health-tracker/api/actuator', prometheusRoutes);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getAccessToken } from './auth';
 
 // Base URL for API requests
-const API_URL = import.meta.env.VITE_API_URL || '{{APP_URL_PREFIX}}/api';
+const API_URL = import.meta.env.VITE_API_URL || '/health-tracker/api';
 
 // Create axios instance with some defaults
 const api = axios.create({

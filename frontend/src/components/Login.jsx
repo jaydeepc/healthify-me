@@ -65,7 +65,7 @@ function Login() {
                 {/* Hero text */}
                 <div className="text-center mt-8 mb-8">
                     <h2 className="text-2xl font-extrabold text-gray-800">
-                    {{APP_DISPLAY_NAME}}
+                    Health Tracker
                     </h2>
                 </div>
             </div>
@@ -97,7 +97,7 @@ function Login() {
                         Login
                     </h1>
                     <p className="text-gray-400 mb-10 text-left max-w-md mx-auto">
-                        Enter your email id and password to access {{APP_DISPLAY_NAME}}
+                        Enter your email id and password to access Health Tracker
                     </p>
 
                     <form onSubmit={handleSubmit}>
