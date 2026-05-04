@@ -1,0 +1,33 @@
+{
+    "name": "{{REPO_NAME}}",
+    "version": "1.0.0",
+    "description": "{{REPO_NAME}} application",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+        "install:ci": "npm run install:all",
+        "dev": "(lsof -ti:{{FRONTEND_PORT}} && kill -9 $(lsof -ti:{{FRONTEND_PORT}}) || true) && (lsof -ti:{{BACKEND_PORT}} && kill -9 $(lsof -ti:{{BACKEND_PORT}}) || true) && sh ./scripts/start.sh",
+        "start": "sh ./scripts/start.sh",
+        "health:check": "curl -f http://localhost:8001/health && curl -f http://localhost:8002/api/health",
+        "build:frontend": "cd frontend && npm run build",
+        "build:backend": "cd backend && npm run build",
+        "build": "npm run build:frontend && npm run build:backend",
+        "test:frontend": "cd frontend && npm test",
+        "test:backend": "cd backend && npm test",
+        "test": "npm run test:frontend && npm run test:backend",
+        "test:frontend:coverage": "cd frontend && npx vitest run --coverage",
+        "test:backend:coverage": "cd backend && npx jest --config ./jest.config.mjs --collectCoverage --ci --reporters=default --reporters=jest-junit --watchAll=false",
+        "test:coverage": "npm run test:frontend:coverage && npm run test:backend:coverage",
+        "test:ci": "npm run install:ci && npm run test:coverage"
+    },
+    "dependencies": {
+        "@aws-sdk/client-ssm": "^3.806.0",
+        "concurrently": "^8.2.2",
+        "dotenv": "^16.5.0"
+    },
+    "devDependencies": {
+        "jest-junit": "^16.0.0",
+        "jest-sonar-reporter": "^2.0.0"
+    }
+}

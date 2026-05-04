@@ -1,0 +1,29 @@
+name: Self Service - Hotfix Bypass Merge
+on:
+  workflow_dispatch:
+    inputs:
+      hotfix_pr_number:
+        description: 'Hotfix PR Number'
+        type: string
+        required: true
+      merge_method:
+        required: true
+        type: choice
+        description: 'Merge Method'
+        options:
+          - ''
+          - squash and merge 
+          - rebase and merge
+      reason_for_bypass:
+        required: true
+        type: string
+        description: 'Explain why are you bypassing gated merge?'    
+
+jobs:
+  Run:
+    uses: devops/gh-actions/.github/workflows/selfservice-hotfix-bypass-merge.yml@release_stable
+    with:
+      hotfix_pr_number: ${{ github.event.inputs.hotfix_pr_number }}
+      merge_method: ${{ github.event.inputs.merge_method }}
+      reason_for_bypass: ${{ github.event.inputs.reason_for_bypass }}
+    secrets: inherit

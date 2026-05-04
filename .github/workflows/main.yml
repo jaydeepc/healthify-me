@@ -1,0 +1,17 @@
+name: Push Event - NodeJS Service
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - release*
+    paths-ignore:
+      - 'README.md'
+      - '.github/**'
+      - 'CODEOWNERS'
+  
+jobs:
+  Run:
+    uses: devops/gh-actions/.github/workflows/nodejs.yml@release_stable
+    secrets: inherit

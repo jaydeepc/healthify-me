@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 min-h-screen font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-secondary font-medium tracking-tight;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply bg-gray-900 text-gray-50;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-md transition-colors shadow-sm font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-white border border-primary text-primary hover:bg-primary-light/10 rounded-md transition-colors shadow-sm font-medium;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md border border-orange-100 dark:border-gray-700 p-6;
+  }
+
+  .card-header {
+    @apply text-primary text-xl font-semibold pb-4 mb-4 border-b border-orange-100 dark:border-gray-700;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
