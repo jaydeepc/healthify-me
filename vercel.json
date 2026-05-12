@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/health-tracker/api/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/health-tracker/api/actuator/(.*)",
+      "dest": "backend/server.js"
+    }
+  ]
+}
