@@ -1,3 +1,7 @@
+// AI: Start
+require('dotenv').config();
+// AI: End
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -9,7 +13,7 @@ const prometheusRoutes = require('./routes/prometheusRoutes');
 const responseTimeMetrics = require('./middleware/responseTimeMetrics');
 
 const app = express();
-const PORT = process.env.BACKEND_PORT;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(responseTimeMetrics);

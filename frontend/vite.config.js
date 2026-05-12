@@ -22,22 +22,6 @@ export default defineConfig({
     port: process.env.FRONTEND_PORT,
     host: true,
     strictPort: true,
-    proxy: {
-      '/health-tracker/api': {
-        target: `http://localhost:${process.env.BACKEND_PORT}`,
-        changeOrigin: true,
-        configure: (proxy, options) => {
-          proxy.on('error', (err, req, res) => {
-            console.log('Proxy error:', err.message);
-            console.log('Target URL:', options.target);
-            console.log('Request URL:', req.url);
-          });
-          proxy.on('proxyReq', (proxyReq, req, res) => {
-            console.log('Proxying request:', req.method, req.url, 'to', options.target + req.url);
-          });
-        }
-      }
-    },
     watch: {
       ignored: ['**/node_modules/**', '**/dist/**', '**/logs/**']
     },
