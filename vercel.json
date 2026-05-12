@@ -1,32 +1,10 @@
 {
-  "version": 2,
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist",
-  "installCommand": "npm install && cd frontend && npm install && cd ../backend && npm install",
-  "functions": {
-    "api/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
+  "experimentalServices": {
+    "frontend": {
+      "entrypoint": "frontend"
+    },
+    "backend": {
+      "entrypoint": "./_/backend"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/health-tracker/api/:path*",
-      "destination": "/api"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/health-tracker/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, must-revalidate"
-        }
-      ]
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
   }
 }
