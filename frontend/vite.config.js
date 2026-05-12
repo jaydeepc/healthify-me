@@ -17,7 +17,7 @@ export default defineConfig({
       }
     }
   ],
-  base: '/health-tracker',
+  base: '/',
   server: {
     port: process.env.FRONTEND_PORT,
     host: true,
