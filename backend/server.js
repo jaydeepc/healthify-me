@@ -25,8 +25,9 @@ app.use(cookieParser());
 app.use('/health-tracker/api', routes);
 app.use('/health-tracker/api/actuator', prometheusRoutes);
 
-// Serve static assets in production
-if (process.env.NODE_ENV === 'production') {
+// Serve static assets only if explicitly enabled (for monolithic deployment)
+// When backend is deployed separately on Vercel, this should NOT be enabled
+if (process.env.SERVE_STATIC === 'true') {
   // Set static folder
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
