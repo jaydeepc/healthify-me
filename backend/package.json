@@ -4,9 +4,9 @@
   "description": "Node.js backend for health-tracker application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node dist/server.js",
     "dev": "nodemon --ignore node_modules --ignore dist --ignore logs server.js",
-    "build": "echo \"Building backend...\" && npm install --production",
+    "build": "mkdir -p dist && cp -r *.js db.js middleware models routes prometheus-metrics dist/ && cp package*.json dist/",
     "test": "jest"
   },
   "dependencies": {
