@@ -23,7 +23,11 @@ Before deploying, you need to set up the following environment variables in your
 
 4. **BACKEND_PORT** - Backend port (default: `16973`)
 
-5. **CORS_ORIGIN** - Your Vercel deployment URL
+5. **VITE_BACKEND_URL** - Your Vercel backend deployment URL (REQUIRED for frontend API calls)
+   - Example: `https://your-backend.vercel.app`
+   - This tells the frontend where to make API requests
+
+6. **CORS_ORIGIN** - Your Vercel frontend deployment URL
    - Example: `https://your-app.vercel.app`
 
 ### Optional Environment Variables
