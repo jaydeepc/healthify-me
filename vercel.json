@@ -1,12 +1,7 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist",
-  "installCommand": "npm install --prefix frontend && npm install --prefix backend",
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/health-tracker/api/:path*",
-      "destination": "https://healthify-me-backend.vercel.app/health-tracker/api/:path*"
+  "experimentalServices": {
+    "frontend": {
+      "entrypoint": "frontend"
     }
-  ]
+  }
 }
