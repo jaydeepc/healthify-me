@@ -136,6 +136,28 @@ Run the container:
 docker run -p 8001:8001 -p 8002:8002 byot-template
 ```
 
+## Deployment
+
+### Vercel Deployment
+
+This application is ready to be deployed on Vercel. See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for detailed deployment instructions.
+
+**Quick Deploy:**
+
+1. Push your code to GitHub
+2. Import the project to Vercel
+3. Set environment variables (see `.env.vercel.example`)
+4. Deploy!
+
+**Required Environment Variables for Vercel:**
+- `MONGO_URI` - MongoDB connection string
+- `NODE_ENV` - Set to `production`
+- `FRONTEND_PORT` - Frontend port (16972)
+- `BACKEND_PORT` - Backend port (16973)
+- `CORS_ORIGIN` - Your Vercel deployment URL
+
+For complete deployment guide, troubleshooting, and post-deployment steps, refer to [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md).
+
 ## License
 
 MIT
