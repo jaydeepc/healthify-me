@@ -1,7 +1,9 @@
 import { getAuthHeaders } from '../utils/auth';
 
 // # AI: Start
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/health-tracker/api';
+const API_BASE_URL = import.meta.env.VITE_BACKEND_URL 
+  ? `${import.meta.env.VITE_BACKEND_URL}/health-tracker/api`
+  : '/health-tracker/api';
 
 // Get all available health metrics with benchmarks
 export const getHealthMetrics = async () => {
