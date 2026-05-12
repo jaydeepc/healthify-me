@@ -23,9 +23,17 @@ register.registerMetric(httpRequestsTotal);
 
 // Import route modules
 const healthRoutes = require('./health');
+// # AI: Start
+const healthMetricsRoutes = require('./healthMetrics');
+const seedRoutes = require('./seed');
+// # AI: End
 
 // Use route modules
 router.use('/health', healthRoutes);
+// # AI: Start
+router.use('/health-metrics', healthMetricsRoutes);
+router.use('/seed', seedRoutes);
+// # AI: End
 
 // Add more routes as needed
 // Example: router.use('/users', require('./users'));

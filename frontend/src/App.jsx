@@ -15,30 +15,21 @@ import {
 export const AuthContext = createContext(null);
 
 function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-    useEffect(() => {
-        const authStatus = checkAuth();
-        setIsAuthenticated(authStatus);
-    }, []);
+    // # AI: Start - Remove authentication requirement
+    const [isAuthenticated, setIsAuthenticated] = useState(true); // Always authenticated
 
     const login = () => {
         setIsAuthenticated(true);
     };
 
     const logout = async () => {
-        try {
-            await authLogout();
-        } catch (error) {
-            console.error('Logout error:', error);
-        } finally {
-            setIsAuthenticated(false);
-        }
+        // For demo purposes, just log the action but don't actually logout
+        console.log('Logout clicked - in a real app this would logout the user');
     };
 
     // Auth context value
     const authValue = {
-        isAuthenticated,
+        isAuthenticated: true, // Always authenticated
         login,
         logout,
     };
@@ -51,29 +42,18 @@ function App() {
                 <Routes>
                     <Route
                         path="/login"
-                        element={
-                            isAuthenticated ? (
-                                <Navigate to="/" />
-                            ) : (
-                                <LoginPage />
-                            )
-                        }
+                        element={<Navigate to="/" />}
                     />
                     <Route
                         path="/"
-                        element={
-                            isAuthenticated ? (
-                                <DashboardPage />
-                            ) : (
-                                <Navigate to="/login" />
-                            )
-                        }
+                        element={<DashboardPage />}
                     />
-                    <Route path="*" element={<Navigate to="/login" />} />
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </Router>
         </AuthContext.Provider>
     );
+    // # AI: End
 }
 
 export default App;

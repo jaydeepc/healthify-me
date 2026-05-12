@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import Health from '../components/Health';
+import HealthTracker from '../components/HealthTracker';
 import { AuthContext } from '../App';
 
 function DashboardPage() {
@@ -21,24 +21,19 @@ function DashboardPage() {
             </button>
 
             <div className="container mx-auto px-4 py-12">
-                <div className="max-w-3xl mx-auto space-y-10">
-                    {/* Header with Piramal Finance theme */}
+                <div className="max-w-7xl mx-auto space-y-10">
+                    {/* Header with creative branding */}
                     <div className="text-center">
-                        <h1 className="text-3xl font-extrabold text-gray-700 mb-2">
-                        Health Tracker
+                        <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent" 
+                            style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
+                            Ojas
                         </h1>
+                        <p className="text-gray-600 text-lg">Your personal vitality and wellness companion</p>
                     </div>
 
-                    {/* Card with shadow */}
+                    {/* Health Tracker component */}
                     <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                        <div className="border-b border-gray-200 pb-4 mb-6">
-                            <h2 className="text-xl font-bold text-gray-700">
-                                System Status
-                            </h2>
-                        </div>
-
-                        {/* Health component displays system status */}
-                        <Health />
+                        <HealthTracker />
                     </div>
                 </div>
             </div>
